@@ -1,0 +1,16 @@
+<canvas></canvas>
+<script>
+    var c = document.getElementsByTagName('canvas')[0]
+    var ctx = c.getContext('2d')
+    var draw = false
+
+    c.addEventListener('click', function(e) {
+        draw ? draw=false : draw=true
+    })
+
+    c.addEventListener('mousemove', function(e) {
+        var x = e.clientX - c.offsetLeft
+        var y = e.clientY - c.offsetTop
+        if (draw) ctx.fillRect(x, y, 10, 10)
+    })
+</script>
